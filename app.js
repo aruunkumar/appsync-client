@@ -27,6 +27,7 @@ var server = http.createServer(function (req, res) {
             res.end();
         });
     } else {
+        console.log('Inside GET block');
         graphqlFn();
         res.writeHead(200);
         res.write(html);
@@ -41,6 +42,7 @@ server.listen(port);
 console.log('Server running at http://127.0.0.1:' + port + '/');
 
 function graphqlFn () {
+console.log('inside graphql Fn');    
     global.WebSocket = require('ws');
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
@@ -96,6 +98,7 @@ const client = new AWSAppSyncClient({
 
 client.hydrated().then(function (client) {
     //Now run a query
+    console.log('Start of query')
     client.query({ query: query })
     //client.query({ query: query, fetchPolicy: 'network-only' })   //Uncomment for AWS Lambda
         .then(function logData(data) {
