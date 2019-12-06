@@ -12,8 +12,8 @@ app.get('/', function (req, res) {
    graphqlFn(req, res)
 //   res.render('todo-table', { todos })
 });
-app.listen(3000, function(){
-  console.log("Listening on port 3000!")
+app.listen(80, function(){
+  console.log("Listening on port 80!")
 });
 
 function graphqlFn (req, res) {
