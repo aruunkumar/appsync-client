@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    title TO DO LIST
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css')
+    style.
+      table.ui.celled img { display: inline-block; }
+      footer { margin: 35px 0 15px 0; text-align: center }
+  body
+    main#main
+    h1.ui.center.aligned.header To Do List
+    .ui.container
+      table.ui.celled.table.center.aligned
+        thead
+          tr
+            th ID
+            th Name
+            th Description
+            th Priority
+        tbody
+          each todo in todos
+            tr
+              td #{todo.id}
+              td #{todo.name}
+              td #{todo.description}
+              td #{todo.priority}
+
